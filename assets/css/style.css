@@ -1,0 +1,142 @@
+/* reset css */
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* Remove default margin */
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+  }
+  /* Remove default padding */
+  ul, ol {
+    padding: 0;
+  }
+  /* Remove list styles */
+  ul, ol {
+    list-style: none;
+  }
+  /* Set default font size and line height */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  h1 {
+    text-align: center;
+    }
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  .total {
+    font-weight: bold;
+  }
+
+  /* footer */
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .footer a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .footer p {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .footer-links {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .footer-links li:last-child {
+    margin-right: 0;
+  }
+
+/* formulário */ 
+form {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+ 
+/* formulários */
+
+.form {
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+  
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }

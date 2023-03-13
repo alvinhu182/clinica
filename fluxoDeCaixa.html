@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo De Caixa</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="fluxoDeCaixa.html">Fluxo de Caixa</a></li>
+			<li><a href="cadastroPacientes.html">Cadastro de Pacientes</a></li>
+		</ul>
+	</nav>
+    <h1> fluxo de caixa</h1>
+    <div class="container"> 
+    <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td><input type="date" name="data"></td>
+            <td><input type="text" name="descricao"></td>
+            <td><input type="number" name="entrada" min="0"></td>
+            <td><input type="number" name="saida" min="0"></td>
+            <td class="saldo"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"></td>
+            <td class="total" id="entrada-total">0</td>
+            <td class="total" id="saida-total">0</td>
+            <td class="total" id="saldo-total">0</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button id="adicionar">Adicionar</button>
+    
+      <script>
+        const tbody = document.querySelector('#tbody');
+        const entradaTotal = document.querySelector('#entrada-total');
+        const saidaTotal = document.querySelector('#saida-total');
+        const saldoTotal = document.querySelector('#saldo-total');
+        const adicionarBtn = document.querySelector('#adicionar');
+    
+        let saldoAtual = 0;
+    
+        function atualizarTotais() {
+          let entrada = 0;
+          let saida = 0;
+          tbody.querySelectorAll('tr').forEach(tr => {
+            entrada += Number(tr.querySelector('input[name="entrada"]').value);
+            saida += Number(tr.querySelector('input[name="saida"]').value);
+            tr.querySelector('.saldo').textContent = entrada - saida;
+          });
+          entradaTotal.textContent = entrada;
+          saidaTotal.textContent = saida;
+          saldoAtual = entrada - saida;
+          saldoTotal.textContent = saldoAtual;
+          saldoTotal.classList.toggle('negativo', saldoAtual < 0);
+        }
+    
+        adicionarBtn.addEventListener('click', () => {
+          const data = document.querySelector('input[name="data"]').value;
+          const descricao = document.querySelector('input[name="descricao"]').value;
+          const entrada = Number(document.querySelector('input[name="entrada"]').value);
+          const saida = Number(document.querySelector('input[name="saida"]').value);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${data}</td>
+            <td>${descricao}</td>
+            <td>${entrada}</td>
+            <td>${saida}</td>
+            <td class="saldo"></td>
+          `;
+          tbody.appendChild(tr);
+          atualizarTotais();
+        });
+      </script>
+ </div>
+
+   <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023, Acompanhamento Médico. Todos os direitos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
