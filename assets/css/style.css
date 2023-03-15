@@ -19,6 +19,8 @@ ul, ol {
 body {
   font-size: 16px;
   line-height: 1.5;
+
+ 
 }
 h1 {
   text-align: center;
@@ -56,13 +58,9 @@ th, td {
 /* footer */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color: #f0f0f0;
   color: #333;
-  padding: 20px;
+  padding: 23px;
   text-align: center;
   font-size: 14px;
 }
@@ -78,8 +76,16 @@ th, td {
 }
 
 .container {
+
   max-width: 960px;
-  margin: 0 auto;
+  margin: 20px auto;
+  min-height: calc(100vh - 210px);
+
+}
+.container.login {
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .footer p {
