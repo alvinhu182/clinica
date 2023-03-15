@@ -26,7 +26,7 @@ $(document).ready(function() {
       // limpa os campos de entrada
       $('input[name="data"]').val('');
       $('input[name="descricao"]').val('');
-      $('input[name="entrada"]').val('');
-      $('input[name="saida"]').val('');
+      $('input[name="entrada"]').val('0');
+      $('input[name="saida"]').val('0');
     });
   });

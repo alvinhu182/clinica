@@ -30,10 +30,10 @@
       </thead>
       <tbody>
         <tr>
-          <td><input type="date" name="data"></td>
-          <td><input type="text" name="descricao"></td>
-          <td><input type="number" name="entrada" min="0" step="0.01"></td>
-          <td><input type="number" name="saida" min="0" step="0.01"></td>
+          <td><input type="date" name="data" required></td>
+          <td><input type="text" name="descricao" placeholder="descrição"></td>
+          <td><input type="number" name="entrada" min="0" step="0.01" value="0" ></td>
+          <td><input type="number" name="saida" min="0" step="0.01" value="0"></td>
           <td><span class="saldo">0.00</span></td>
         </tr>
       </tbody>
@@ -41,7 +41,7 @@
     <button id="adicionar">adicionar</button>
     </div>
     <footer class="footer">
-        <div class="container">
+        <div>
           <p>&copy; 2023, Acompanhamento Médico. Todos os direitos reservados.</p>
           <ul class="footer-links">
             <li><a href="#">Política de Privacidade</a></li>
